@@ -17,11 +17,11 @@
       ]
     }
   },
-  "postCreateCommand": "dotnet restore --project backend/DotNetApi && npm install --prefix frontend/angular-app",
+  "postCreateCommand": "dotnet restore backend/DotNetApi/DotNetApi.csproj && npm install --prefix frontend/angular-app",
   "forwardPorts": [5000, 4200],
   "portsAttributes": {
     "5000": { "label": "Backend (.NET)" },
     "4200": { "label": "Frontend (Angular)" }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "root"
 }

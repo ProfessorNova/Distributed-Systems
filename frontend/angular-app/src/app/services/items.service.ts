@@ -23,7 +23,7 @@ export interface ItemRequestDto {
   providedIn: 'root',
 })
 export class ItemsService {
-  private readonly baseUrl = 'http://localhost:5000';
+  private readonly baseUrl = 'http://localhost:8080';
 
   /**
    * Initializes the ItemsService with an HttpClient.
