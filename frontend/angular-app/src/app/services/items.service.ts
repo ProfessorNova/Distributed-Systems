@@ -23,7 +23,7 @@ export interface ItemRequestDto {
   providedIn: 'root',
 })
 export class ItemsService {
-  private readonly baseUrl = 'http://localhost:8080';
+  private readonly baseUrl = 'https://vigilant-computing-machine-v994rvjjjj6hw9p9-8080.app.github.dev';
 
   /**
    * Initializes the ItemsService with an HttpClient.
