@@ -1,0 +1,27 @@
+{
+  "name": "Full-Stack Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "angular.ng-template"
+      ]
+    }
+  },
+  "postCreateCommand": "dotnet restore --project backend/DotNetApi && npm install --prefix frontend/angular-app",
+  "forwardPorts": [5000, 4200],
+  "portsAttributes": {
+    "5000": { "label": "Backend (.NET)" },
+    "4200": { "label": "Frontend (Angular)" }
+  },
+  "remoteUser": "vscode"
+}
