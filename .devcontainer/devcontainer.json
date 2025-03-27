@@ -22,11 +22,9 @@
   "portsAttributes": {
     "8080": {
       "label": "Backend (.NET)",
-      "visibility": "public"
     },
     "4200": {
       "label": "Frontend (Angular)",
-      "visibility": "public"
     }
   },
   "remoteUser": "root"
