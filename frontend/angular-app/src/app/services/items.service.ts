@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 /**
  * Represents a shopping item returned by the .NET API.
@@ -23,7 +24,7 @@ export interface ItemRequestDto {
   providedIn: 'root',
 })
 export class ItemsService {
-  private readonly baseUrl = 'https://vigilant-computing-machine-v994rvjjjj6hw9p9-8080.app.github.dev';
+  private readonly baseUrl = environment.apiUrl;
 
   /**
    * Initializes the ItemsService with an HttpClient.
