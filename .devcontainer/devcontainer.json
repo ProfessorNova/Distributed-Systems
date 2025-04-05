@@ -17,7 +17,7 @@
       ]
     }
   },
-  "postStartCommand": "cp .devcontainer/environment.template.ts frontend/angular-app/src/environments/environment.ts && sed -i 's|REPLACE_BACKEND_URL|https://${CODESPACE_NAME}-8080.app.github.dev|g' frontend/angular-app/src/environments/environment.ts && dotnet restore backend/DotNetApi/DotNetApi.csproj && npm install --prefix frontend/angular-app",
+  "postStartCommand": "dotnet restore backend/DotNetApi/DotNetApi.csproj && npm install --prefix frontend/angular-app",
   "forwardPorts": [8080, 4200],
   "portsAttributes": {
     "8080": {
