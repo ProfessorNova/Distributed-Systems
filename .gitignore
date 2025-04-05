@@ -3,3 +3,4 @@ bin
 obj
 .angular
 .vscode
+frontend/angular-app/src/environments/environment.development.ts
