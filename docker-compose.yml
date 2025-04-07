@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend/DotNetApi
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    volumes:
+      - ./backend/MyDotNetApi:/src
+    container_name: dotnet-backend
+
+  frontend:
+    build:
+      context: ./frontend/angular-app
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    container_name: angular-frontend
