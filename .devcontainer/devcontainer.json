@@ -6,7 +6,9 @@
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
       },
-      "extensions": []
+      "extensions": [
+        "ms-dotnettools.csdevkit"
+      ]
     }
   },
   "features": {
