@@ -1,20 +1,12 @@
 {
-  "name": "Full-Stack Development Environment",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
+  "name": "C# (.NET)",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
   "customizations": {
     "vscode": {
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
       },
-      "extensions": [
-        "ms-dotnettools.csharp",
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint",
-        "angular.ng-template"
-      ]
+      "extensions": []
     }
   },
   "features": {
@@ -29,6 +21,5 @@
     "5000": {
       "label": "Frontend"
     }
-  },
-  "remoteUser": "root"
+  }
 }
