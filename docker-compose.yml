@@ -1,21 +1,27 @@
 services:
+  frontend:
+    image: maeddes/hse25frontend:flask
+    container_name: frontend
+    ports:
+      - "5000:5000"
+    environment:
+      API_SERVER_URL: http://backend:3000
+    networks:
+      - app-network
+
   backend:
     build:
       context: ./backend/DotNetApi
       dockerfile: Dockerfile
+    container_name: backend
     ports:
-      - "8080:8080"
+      - "3000:3000"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:8080
-    volumes:
-      - ./backend/MyDotNetApi:/src
-    container_name: dotnet-backend
+      - ASPNETCORE_URLS=http://+:3000
+    networks:
+      - app-network
 
-  frontend:
-    build:
-      context: ./frontend/angular-app
-      dockerfile: Dockerfile
-    ports:
-      - "4200:4200"
-    container_name: angular-frontend
+
+networks:
+  app-network:
+    driver: bridge

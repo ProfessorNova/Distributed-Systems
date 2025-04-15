@@ -20,16 +20,14 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   },
-  "postStartCommand": "dotnet restore backend/DotNetApi/DotNetApi.csproj && npm install --prefix frontend/angular-app",
-  "forwardPorts": [8080, 4200],
+  "postStartCommand": "dotnet restore backend/DotNetApi/DotNetApi.csproj",
+  "forwardPorts": [3000, 5000],
   "portsAttributes": {
-    "8080": {
-      "label": "Backend (.NET)",
-      "visibility": "public"
+    "3000": {
+      "label": "Backend"
     },
-    "4200": {
-      "label": "Frontend (Angular)",
-      "visibility": "public"
+    "5000": {
+      "label": "Frontend"
     }
   },
   "remoteUser": "root"
