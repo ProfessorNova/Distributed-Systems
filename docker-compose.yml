@@ -30,8 +30,6 @@ services:
       POSTGRES_USER: shopping_user
       POSTGRES_PASSWORD: shopping_pass
       POSTGRES_DB: shopping_db
-    ports:
-      - "5432:5432"
     networks:
       - shoppingnet
 
