@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
@@ -14,14 +13,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build, run and push Docker image
-        env:
-          # Lowercase the owner/repo string
-          IMAGE_TAG: ghcr.io/${GITHUB_REPOSITORY,,}:latest
+      - name: Build the Image and Push
         run: |
-          # Build needs a directory context; -f points at the Dockerfile
-          docker build --tag $IMAGE_TAG \
-            -f ./backend/ShoppingApi/Dockerfile \
-            ./backend/ShoppingApi
-          docker run --rm $IMAGE_TAG
-          docker push $IMAGE_TAG
+          docker build -t ghcr.io/ProfessorNova/distributed-systems:latest ./backend/ShoppingApi/Dockerfile
+          docker run --rm ghcr.io/ProfessorNova/distributed-systems:latest
+          docker push ghcr.io/ProfessorNova/distributed-systems:latest
