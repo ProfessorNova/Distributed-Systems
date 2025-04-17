@@ -15,6 +15,6 @@ jobs:
 
       - name: Build the Image and Push
         run: |
-          docker build -t ghcr.io/ProfessorNova/distributed-systems:latest ./backend/ShoppingApi/Dockerfile
-          docker run --rm ghcr.io/ProfessorNova/distributed-systems:latest
-          docker push ghcr.io/ProfessorNova/distributed-systems:latest
+          docker build -t ghcr.io/professornova/distributed-systems:latest ./backend/ShoppingApi/Dockerfile
+          docker run --rm ghcr.io/professornova/distributed-systems:latest
+          docker push ghcr.io/professornova/distributed-systems:latest
