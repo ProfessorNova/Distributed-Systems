@@ -6,16 +6,14 @@
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
       },
-      "extensions": [
-        "ms-dotnettools.csdevkit"
-      ]
+      "extensions": ["ms-dotnettools.csdevkit"]
     }
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:1": {},
     "ghcr.io/devcontainers/features/dotnet:1": {}
   },
-  "postStartCommand": "dotnet restore backend/DotNetApi/DotNetApi.csproj",
+  "postStartCommand": "dotnet restore backend/ShoppingApi/ShoppingApi.csproj",
   "forwardPorts": [3000, 5000],
   "portsAttributes": {
     "3000": {
