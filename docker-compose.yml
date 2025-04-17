@@ -10,7 +10,12 @@ services:
       - shoppingnet
 
   api:
+    # Build the API from the local directory
     build: backend/ShoppingApi
+
+    # Or use a pre-built image from GitHub Container Registry
+    # image: ghcr.io/professornova/distributed-systems:latest
+
     container_name: shopping_api
     depends_on:
       - db
