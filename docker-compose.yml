@@ -10,8 +10,7 @@ services:
       API_SERVER_URL: "http://api:3000"
     networks:
       - shoppingnet
-    restart:
-      - always
+    restart: always
 
   api:
     # Build the API from the local directory
@@ -31,8 +30,7 @@ services:
       - "3000:3000"
     networks:
       - shoppingnet
-    restart:
-      - always
+    restart: always
 
   db:
     image: postgres:15
@@ -43,8 +41,7 @@ services:
       POSTGRES_DB: shopping_db
     networks:
       - shoppingnet
-    restart:
-      - always
+    restart: always
 
 networks:
   shoppingnet:
