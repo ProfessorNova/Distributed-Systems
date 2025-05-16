@@ -1,12 +1,20 @@
 {
-  "name": "C# (.NET)",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
+  "name": "Codespace",
+  "build": {
+      "dockerfile": "Dockerfile"
+  },
+  "mounts": ["type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock"],
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+        "terminal.integrated.shell.linux": "/bin/sh"
       },
-      "extensions": ["ms-dotnettools.csdevkit"]
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-azuretools.vscode-docker",
+		    "ms-kubernetes-tools.vscode-kubernetes-tools"
+      ]
     }
   },
   "features": {
@@ -22,5 +30,6 @@
     "5000": {
       "label": "Frontend"
     }
-  }
+  },
+  "remoteUser": "root"
 }
