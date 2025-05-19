@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  containers:
+    - name: backend
+      image: ghcr.io/professornova/distributed-systems:latest
+      ports:
+        - containerPort: 3000
+      env:
+        - name: ASPNETCORE_URLS
+          value: "http://+:3000"
+        - name: POSTGRES_CONNECTION
+          value: "Host=database;Port=5432;Database=shopping_db;Username=shopping_user;Password=shopping_pass"
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
