@@ -153,6 +153,3 @@ Look for the following:
 | Restart a Deployment   | `kubectl rollout restart deployment/<name>`               |
 | Roll back a Deployment | `kubectl rollout undo deployment/<name>`                  |
 
----
-
-Keep this document up to date as you evolve your manifests and workflows. Happy cluster-ing!
